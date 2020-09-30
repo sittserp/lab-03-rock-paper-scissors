@@ -7,6 +7,8 @@ const lossSpan = document.querySelector('#loss-span');
 const drawSpan = document.querySelector('#draw-span');
 const gamesPlayedSpan = document.querySelector('#games-played');
 const winPercentSpan = document.querySelector('#win-percent-span');
+const resetButton = document.querySelector('#reset');
+const resetSpan = document.querySelector('#reset-span');
 
 
 // initialize state
@@ -16,6 +18,8 @@ let loss = 0;
 let draw = 0;
 let gamesPlayed = 0;
 let winPercent = 0;
+let reset = 0;
+
 
 // set event listeners to update state and DOM
 
@@ -26,7 +30,7 @@ playButton.addEventListener('click', () => {
     if (didUserWin(playerChoice, computerWeapon) === 'win') {
         win++;
     }
-    if (didUserWin(playerChoice, computerWeapon) === 'loss') {
+    if (didUserWin(playerChoice, computerWeapon) === 'lose') {
         loss++;
     }
     if (didUserWin(playerChoice, computerWeapon) === 'draw') {
@@ -43,3 +47,22 @@ playButton.addEventListener('click', () => {
         winPercentSpan.textContent = Math.floor(winPercent);
 
 })
+
+resetButton.addEventListener('click', () => {
+    win = 0;
+    loss = 0;
+    draw = 0;
+    gamesPlayed = 0;
+    winPercent = 0;
+
+    winSpan.textContent = win;
+    lossSpan.textContent = loss;
+    drawSpan.textContent = draw;
+    gamesPlayedSpan.textContent = gamesPlayed;
+    winPercentSpan.textContent = Math.floor(winPercent);
+
+    reset++;
+
+    resetSpan.textContent = reset;
+})
+
