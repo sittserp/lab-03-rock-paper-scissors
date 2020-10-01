@@ -17,31 +17,12 @@ export function getRandomThrow() {
 }
 
 export function didUserWin(player, computer) {
-    if (player === 'rock' && computer === 'rock') {
-        return 'draw';
-    }
-    if (player === 'rock' && computer === 'paper') {
-        return 'lose';
-    }
-    if (player === 'rock' && computer === 'scissors') {
+    if ((player === 'rock' && computer === 'scissors') || (player === 'paper' && computer === 'rock') || (player === 'scissors' && computer === 'paper')) {
         return 'win';
-    }
-    if (player === 'paper' && computer === 'rock') {
-        return 'win';
-    }
-    if (player === 'paper' && computer === 'paper') {
+    } else if (player === computer) {
         return 'draw';
-    }
-    if (player === 'paper' && computer === 'scissors') {
+    } else {
         return 'lose';
-    }
-    if (player === 'scissors' && computer === 'rock') {
-        return 'lose';
-    }
-    if (player === 'scissors' && computer === 'paper') {
-        return 'win';
-    }
-    if (player === 'scissors' && computer === 'scissors') {
-        return 'draw';
     }
 }
+

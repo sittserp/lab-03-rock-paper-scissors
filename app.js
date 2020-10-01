@@ -23,30 +23,33 @@ let reset = 0;
 
 // set event listeners to update state and DOM
 
+function updateView() {
+    winSpan.textContent = win;
+    lossSpan.textContent = loss;
+    drawSpan.textContent = draw;
+    gamesPlayedSpan.textContent = gamesPlayed;
+    winPercentSpan.textContent = Math.floor(winPercent);
+}
+
 playButton.addEventListener('click', () => {
     const computerWeapon = getRandomThrow();
-    const playerWeapon = document.querySelector(':checked');
-    const playerChoice = playerWeapon.value;
-    if (didUserWin(playerChoice, computerWeapon) === 'win') {
+    const playerWeapon = document.querySelector(':checked').value;
+    // const playerChoice = playerWeapon.value;
+    if (didUserWin(playerWeapon, computerWeapon) === 'win') {
         win++;
     }
-    if (didUserWin(playerChoice, computerWeapon) === 'lose') {
+    if (didUserWin(playerWeapon, computerWeapon) === 'lose') {
         loss++;
     }
-    if (didUserWin(playerChoice, computerWeapon) === 'draw') {
+    if (didUserWin(playerWeapon, computerWeapon) === 'draw') {
         draw++;
     }
 
-        gamesPlayed++;
-        winPercent = win / gamesPlayed * 100;
+    gamesPlayed++;
+    winPercent = win / gamesPlayed * 100;
     
-        winSpan.textContent = win;
-        lossSpan.textContent = loss;
-        drawSpan.textContent = draw;
-        gamesPlayedSpan.textContent = gamesPlayed;
-        winPercentSpan.textContent = Math.floor(winPercent);
-
-})
+    updateView();
+});
 
 resetButton.addEventListener('click', () => {
     win = 0;
@@ -55,14 +58,10 @@ resetButton.addEventListener('click', () => {
     gamesPlayed = 0;
     winPercent = 0;
 
-    winSpan.textContent = win;
-    lossSpan.textContent = loss;
-    drawSpan.textContent = draw;
-    gamesPlayedSpan.textContent = gamesPlayed;
-    winPercentSpan.textContent = Math.floor(winPercent);
-
     reset++;
 
     resetSpan.textContent = reset;
-})
+
+    updateView();
+});
 
