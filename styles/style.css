@@ -94,6 +94,8 @@ content {
 p {
     margin: var(--gutter);
 }
+
+
   
 footer {
     position: fixed;

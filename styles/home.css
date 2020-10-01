@@ -1,1 +1,8 @@
 /* add home page styles here */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]:checked + img {
+    border: solid 5px black;
+}
