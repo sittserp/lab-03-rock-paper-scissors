@@ -53,10 +53,11 @@ section {
 
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     background-color: var(--color3);
     height: var(--header-height);
     box-shadow: var(--shadow);
+    font-size: 3em;
 }
 
 footer {
@@ -93,6 +94,8 @@ content {
 p {
     margin: var(--gutter);
 }
+
+
   
 footer {
     position: fixed;
