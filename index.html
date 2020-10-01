@@ -21,10 +21,18 @@
     <main>
         <section class="main-section">
             Choose rock, paper, or scissors below and click Play to see if you win against the computer!
+            <div>Here are some basic rules: </div>
             <div>
-                <input type="radio" name="choice" value="rock">
-                <input type="radio" name="choice" value="paper">
-                <input type="radio" name="choice" value="scissors">
+                <ul>
+                    <li>Rock crushes Scissors</li>
+                    <li>Paper covers Rock</li>
+                    <li>Scissors cuts Paper</li>
+                </ul>
+            </div>
+            <div>
+                <input type="radio" name="choice" value="rock"><img src="./assets/rock.png" alt="rock">
+                <input type="radio" name="choice" value="paper"><img src="./assets/paper.png" alt="paper">
+                <input type="radio" name="choice" value="scissors"><img src="./assets/scissors.png" alt="scissors">
             </div>
             <button id="play">Play</button>
             <div>Wins: <span id="win-span">0</span></div> 
